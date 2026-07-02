@@ -97,6 +97,16 @@ Used to store the user's settings locally: the global on/off toggle and the per-
 Used only when the user opens the popup, to read the current tab's domain so it can be added to or removed from the allowlist. No broad host access is requested and no other tab data is accessed.
 ```
 
+**Host access (контент-скрипт с matches http/https)**
+```
+Bloq's content script runs on all http and https pages to hide ad banners and suppress cookie-consent pop-ups directly in the page (cosmetic filtering). Broad host matching is required because ads and consent dialogs can appear on any website the user visits. The content script only reads and modifies the page DOM locally to hide elements and click "reject all"; it does not collect, store, or transmit page content or user data.
+```
+
+**Remote code (удалённый код)** - ответ **No**
+```
+Bloq does not use remote code. All scripts and the blocking ruleset are bundled in the extension package; nothing is fetched or executed from remote sources.
+```
+
 ### Data usage
 
 ```
