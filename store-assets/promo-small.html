@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 440px; height: 280px; overflow: hidden; }
+  body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: radial-gradient(500px 300px at 75% -20%, #223056 0%, #0e1016 60%);
+    color: #fff; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 14px;
+  }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  .logo {
+    width: 62px; height: 62px; border-radius: 50%; background: #e03131; position: relative;
+    box-shadow: 0 8px 26px rgba(224,49,49,.5);
+  }
+  .logo::after {
+    content: ""; position: absolute; top: 50%; left: 8px; right: 8px; height: 10px;
+    background: #fff; border-radius: 3px; transform: translateY(-50%) rotate(-45deg);
+  }
+  .wordmark { font-size: 52px; font-weight: 800; letter-spacing: -1px; }
+  .tagline { font-size: 17px; color: #c8d0e0; font-weight: 500; text-align: center; max-width: 360px; }
+</style>
+</head>
+<body>
+  <div class="brand">
+    <div class="logo"></div>
+    <div class="wordmark">Bloq</div>
+  </div>
+  <div class="tagline">Реклама, баннеры и cookie-окна - долой. Всё локально и приватно.</div>
+</body>
+</html>

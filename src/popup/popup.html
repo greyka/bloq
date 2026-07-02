@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Bloq</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="../../icons/icon32.png" alt="" width="20" height="20">
+    <h1>Bloq</h1>
+  </header>
+
+  <label class="row">
+    <span>Блокировка включена</span>
+    <input type="checkbox" id="enabled">
+  </label>
+
+  <label class="row" id="site-row">
+    <span>Блокировать на <b id="site-host"></b></span>
+    <input type="checkbox" id="site-enabled">
+  </label>
+
+  <p class="hint" id="hint" hidden>Сетевые правила применятся после обновления страницы.</p>
+  <button id="reload" hidden>Обновить страницу</button>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

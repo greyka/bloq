@@ -1,0 +1,121 @@
+// Bloq - единый источник данных косметической фильтрации.
+// Модуль грузится контент-скриптом через динамический import и напрямую тестами.
+// Селекторы вставляются в stylesheet построчно (по одному правилу на селектор),
+// поэтому символы { } ; в селекторах запрещены - это проверяет тест.
+
+// Баннеры и рекламные контейнеры (консервативный набор в духе EasyList).
+export const cosmeticSelectors = [
+  "#ad",
+  "#ads",
+  "#ad-container",
+  "#ad_container",
+  "#ad-banner",
+  "#banner-ad",
+  "#banner_ad",
+  ".ad",
+  ".ads",
+  ".advert",
+  ".advertisement",
+  ".advertising",
+  ".ad-banner",
+  ".ad_banner",
+  ".ad-container",
+  ".ad-wrapper",
+  ".ad-slot",
+  ".ad-unit",
+  ".adunit",
+  ".ad-placeholder",
+  ".adsbygoogle",
+  "ins[data-ad-client]",
+  ".adfox",
+  'div[id^="adfox_"]',
+  'div[id^="yandex_rtb_"]',
+  ".adv",
+  ".banner-ad",
+  ".banner_ad",
+  'div[id^="div-gpt-ad"]',
+  'iframe[id^="google_ads_iframe"]',
+  'iframe[src*="doubleclick.net"]',
+  'iframe[src*="googlesyndication.com"]',
+  ".taboola",
+  "#taboola-below-article-thumbnails",
+  ".trc_related_container",
+  ".OUTBRAIN",
+  ".ob-widget",
+];
+
+// Cookie-попапы: контейнеры и оверлеи известных CMP + осторожные генерики.
+export const cookieHideSelectors = [
+  "#onetrust-banner-sdk",
+  "#onetrust-consent-sdk",
+  ".onetrust-pc-dark-filter",
+  "#CybotCookiebotDialog",
+  "#CybotCookiebotDialogBodyUnderlay",
+  "#qc-cmp2-container",
+  "#didomi-host",
+  ".didomi-popup-backdrop",
+  "#usercentrics-root",
+  "#usercentrics-cmp-ui",
+  "#cmpbox",
+  "#cmpbox2",
+  "#truste-consent-track",
+  ".truste_box_overlay",
+  ".truste_overlay",
+  "#cookiescript_injected",
+  "#cookiescript_injected_wrapper",
+  ".cc-window",
+  "#cookie-law-info-bar",
+  ".cli-modal-backdrop",
+  "#cmplz-cookiebanner-container",
+  ".cmplz-cookiebanner",
+  ".cky-consent-container",
+  ".cky-overlay",
+  "#tarteaucitronRoot",
+  "#BorlabsCookieBox",
+  ".osano-cm-window",
+  "#iubenda-cs-banner",
+  ".iubenda-cs-container",
+  'div[id^="sp_message_container_"]',
+  'iframe[id^="sp_message_iframe_"]',
+  ".fc-consent-root",
+  ".fc-dialog-overlay",
+  "#axeptio_overlay",
+  "#hs-eu-cookie-confirmation",
+  "#cookie-notice",
+  "#cookiebanner",
+  "#cookie-banner",
+  ".cookie-banner",
+  ".cookie-notice",
+  "#cookie-consent",
+  ".cookie-consent-banner",
+  "#gdpr-cookie-message",
+  "#ez-cookie-dialog",
+];
+
+// Кнопки «Отклонить все» известных CMP. Клик ставит отказный consent-cookie,
+// поэтому баннер не возвращается при следующих визитах (лучше, чем просто скрыть).
+export const cookieRejectClicks = [
+  { cmp: "OneTrust", selectors: ["#onetrust-reject-all-handler", ".ot-pc-refuse-all-handler"] },
+  {
+    cmp: "Cookiebot",
+    selectors: [
+      "#CybotCookiebotDialogBodyButtonDecline",
+      "#CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll",
+    ],
+  },
+  { cmp: "Didomi", selectors: ["#didomi-notice-disagree-button", ".didomi-continue-without-agreeing"] },
+  { cmp: "Usercentrics", selectors: ['[data-testid="uc-deny-all-button"]'] },
+  { cmp: "consentmanager.net", selectors: [".cmpboxbtnno"] },
+  { cmp: "Complianz", selectors: [".cmplz-deny"] },
+  { cmp: "CookieYes", selectors: [".cky-btn-reject"] },
+  { cmp: "tarteaucitron", selectors: ["#tarteaucitronAllDenied2"] },
+  { cmp: "Osano", selectors: [".osano-cm-denyAll"] },
+  { cmp: "iubenda", selectors: [".iubenda-cs-reject-btn"] },
+  { cmp: "Borlabs", selectors: ["a[data-cookie-refuse]", "button[data-cookie-refuse]"] },
+];
+
+// Хосты с открытым shadow DOM, внутри которых ищем кнопки отказа.
+export const shadowHosts = ["#usercentrics-root", "#usercentrics-cmp-ui"];
+
+// Классы блокировки скролла, которые CMP вешают на html/body.
+export const scrollLockClasses = ["didomi-popup-open", "sp-message-open", "qc-cmp-ui-showing"];

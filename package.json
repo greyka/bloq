@@ -1,0 +1,12 @@
+{
+  "name": "bloq",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Браузерное расширение: блокировка рекламы, баннеров и cookie-попапов",
+  "scripts": {
+    "test": "node --test",
+    "icons": "node tools/make-icons.mjs",
+    "build": "node tools/build-zip.mjs"
+  }
+}

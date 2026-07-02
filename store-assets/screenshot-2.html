@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1280px; height: 800px; overflow: hidden; }
+  body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: linear-gradient(180deg, #0e1016 0%, #171b26 100%);
+    color: #f2f4f8; padding: 40px 56px;
+  }
+  .title { text-align: center; font-size: 34px; font-weight: 800; margin-bottom: 6px; }
+  .sub { text-align: center; font-size: 19px; color: #aeb7c8; margin-bottom: 30px; }
+  .split { display: flex; gap: 32px; height: 620px; }
+  .col { flex: 1; display: flex; flex-direction: column; }
+  .label { font-size: 20px; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+  .label.bad { color: #ff8a8a; }
+  .label.good { color: #4ade80; }
+  .screen {
+    flex: 1; background: #fff; border-radius: 14px; overflow: hidden; color: #1c1c1e;
+    box-shadow: 0 30px 70px rgba(0,0,0,.45); padding: 22px 24px;
+  }
+  .h { height: 24px; width: 65%; background: #2b2f36; border-radius: 6px; margin-bottom: 16px; }
+  .ln { height: 12px; background: #e5e7eb; border-radius: 5px; margin-bottom: 11px; }
+  .ln.s { width: 85%; } .ln.m { width: 95%; } .ln.x { width: 55%; }
+  .ad {
+    background: repeating-linear-gradient(45deg, #ffe3e3, #ffe3e3 12px, #ffd0d0 12px, #ffd0d0 24px);
+    border: 1px solid #ffb3b3; color: #c92a2a; font-weight: 700; text-align: center;
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  }
+  .ad.b1 { height: 78px; margin: 14px 0; }
+  .ad.b2 { height: 120px; margin: 14px 0; }
+  .cookie {
+    position: absolute; left: 24px; right: 24px; bottom: 20px; background: #2b2f36; color: #fff;
+    border-radius: 10px; padding: 14px 16px; font-size: 13px; display: flex; gap: 10px; align-items: center;
+  }
+  .cookie .btn { background: #e03131; padding: 6px 12px; border-radius: 6px; font-weight: 700; white-space: nowrap; }
+  .screen.bad { position: relative; }
+  .clean { color: #16a34a; font-size: 14px; font-weight: 700; text-align: center; padding: 20px 0; }
+  .fast { margin-top: 14px; display: inline-flex; align-items: center; gap: 8px; color: #16a34a; font-weight: 700; font-size: 15px; }
+</style>
+</head>
+<body>
+  <div class="title">Одна страница - две реальности</div>
+  <div class="sub">Слева обычный веб. Справа - тот же сайт с Bloq.</div>
+  <div class="split">
+    <div class="col">
+      <div class="label bad">✕ Без Bloq</div>
+      <div class="screen bad">
+        <div class="h"></div>
+        <div class="ad b1">РЕКЛАМА 728×90</div>
+        <div class="ln m"></div><div class="ln s"></div>
+        <div class="ad b2">БАННЕР</div>
+        <div class="ln m"></div><div class="ln x"></div>
+        <div class="cookie">🍪 Мы используем cookie… <span class="btn">Принять все</span></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="label good">✓ С Bloq</div>
+      <div class="screen">
+        <div class="h"></div>
+        <div class="ln m"></div><div class="ln s"></div>
+        <div class="clean">◻ реклама, баннеры и cookie-окно убраны</div>
+        <div class="ln m"></div><div class="ln s"></div><div class="ln m"></div>
+        <div class="ln x"></div>
+        <div class="fast">⚡ Страница загрузилась быстрее и чище</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,258 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "2mdn.net",
+        "app-measurement.com",
+        "doubleclick.net",
+        "google-analytics.com",
+        "googleadservices.com",
+        "googlesyndication.com",
+        "googletagservices.com"
+      ],
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "33across.com",
+        "adform.net",
+        "adition.com",
+        "adnxs.com",
+        "adroll.com",
+        "adsrvr.org",
+        "amazon-adsystem.com",
+        "bidswitch.net",
+        "bluekai.com",
+        "casalemedia.com",
+        "criteo.com",
+        "criteo.net",
+        "demdex.net",
+        "everesttech.net",
+        "gumgum.com",
+        "id5-sync.com",
+        "improvedigital.com",
+        "indexww.com",
+        "krxd.net",
+        "mathtag.com",
+        "media.net",
+        "openx.net",
+        "pubmatic.com",
+        "rubiconproject.com",
+        "sharethrough.com",
+        "smartadserver.com",
+        "sonobi.com",
+        "teads.tv",
+        "yieldmo.com"
+      ],
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "directadvert.ru",
+        "infox.sg",
+        "kadam.net",
+        "lentainform.com",
+        "marketgid.com",
+        "mgid.com",
+        "outbrain.com",
+        "revcontent.com",
+        "smi2.net",
+        "smi2.ru",
+        "taboola.com"
+      ],
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  },
+  {
+    "id": 4,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "adsafeprotected.com",
+        "amplitude.com",
+        "cdn.segment.com",
+        "chartbeat.com",
+        "clarity.ms",
+        "crazyegg.com",
+        "doubleverify.com",
+        "fullstory.com",
+        "hotjar.com",
+        "inspectlet.com",
+        "luckyorange.com",
+        "mixpanel.com",
+        "moatads.com",
+        "mouseflow.com",
+        "scorecardresearch.com",
+        "segment.io"
+      ],
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  },
+  {
+    "id": 5,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "ad.mail.ru",
+        "adfox.ru",
+        "adriver.ru",
+        "ads.vk.com",
+        "an.yandex.ru",
+        "betweendigital.com",
+        "buzzoola.com",
+        "gnezdo.ru",
+        "hybrid.ai",
+        "mc.webvisor.org",
+        "mc.yandex.ru",
+        "relap.io",
+        "soloway.ru",
+        "ssp.rambler.ru",
+        "tns-counter.ru",
+        "top-fwz1.mail.ru",
+        "yadro.ru"
+      ],
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  },
+  {
+    "id": 6,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "adcash.com",
+        "adsterra.com",
+        "clickadu.com",
+        "exoclick.com",
+        "hilltopads.net",
+        "popads.net",
+        "popcash.net",
+        "propellerads.com",
+        "propellerclick.com",
+        "trafficjunky.net"
+      ],
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  },
+  {
+    "id": 7,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||ads.",
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  },
+  {
+    "id": 8,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||adserver.",
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  },
+  {
+    "id": 9,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||adservice.",
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  },
+  {
+    "id": 10,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||banners.",
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  },
+  {
+    "id": 11,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||adimg.",
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  },
+  {
+    "id": 12,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||creatives.",
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  },
+  {
+    "id": 13,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||telemetry.",
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  },
+  {
+    "id": 14,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||metrics.",
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  },
+  {
+    "id": 15,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||facebook.com/tr^",
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  },
+  {
+    "id": 16,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||vk.com/rtrg^",
+      "excludedResourceTypes": ["main_frame"],
+      "domainType": "thirdParty"
+    }
+  }
+]

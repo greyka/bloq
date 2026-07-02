@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Bloq",
+  "version": "1.0.0",
+  "description": "Блокировщик рекламы: сетевые запросы рекламных сетей, баннеры и cookie-попапы.",
+  "minimum_chrome_version": "110",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["declarativeNetRequest", "storage", "activeTab"],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Bloq",
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["src/content/bloq.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "bloq_ads",
+        "enabled": true,
+        "path": "rules/ads.json"
+      }
+    ]
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["data/selectors.mjs", "common/matching.mjs"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ]
+}

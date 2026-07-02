@@ -1,0 +1,16 @@
+# Артефакты сборки
+/dist/
+
+# Служебная папка, которую Chrome генерирует внутри распакованного расширения
+/_metadata/
+
+# Node
+/node_modules/
+
+# Временный dev-профиль Chrome для проверки загрузки
+/.chrome-profile/
+
+# ОС
+Thumbs.db
+Desktop.ini
+.DS_Store
