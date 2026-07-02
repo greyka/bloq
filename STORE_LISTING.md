@@ -9,6 +9,7 @@
 - **Иконка магазина:** `icons/icon128.png`
 - **Скриншоты:** `store-assets/screenshot-1.png`, `store-assets/screenshot-2.png` (1280×800)
 - **Малый промо-тайл (опц.):** `store-assets/promo-small.png` (440×280)
+- **Большой промо-баннер (опц.):** `store-assets/promo-marquee.png` (1400×560)
 - **Privacy policy URL:** ссылка на [PRIVACY.md](PRIVACY.md) в опубликованном репозитории
 
 ---

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1400px; height: 560px; overflow: hidden; }
+  body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: radial-gradient(1100px 700px at 82% -20%, #23305a 0%, #0e1016 58%);
+    color: #f2f4f8;
+    display: flex; align-items: center; gap: 60px;
+    padding: 0 80px;
+  }
+  .left { width: 660px; flex: none; }
+  .brand { display: flex; align-items: center; gap: 24px; margin-bottom: 30px; }
+  .logo {
+    width: 104px; height: 104px; border-radius: 50%;
+    background: #e03131; position: relative; flex: none;
+    box-shadow: 0 14px 46px rgba(224,49,49,.5);
+  }
+  .logo::after {
+    content: ""; position: absolute; top: 50%; left: 14px; right: 14px; height: 17px;
+    background: #fff; border-radius: 5px; transform: translateY(-50%) rotate(-45deg);
+  }
+  .wordmark { font-size: 82px; font-weight: 800; letter-spacing: -1.5px; }
+  .tagline { font-size: 30px; line-height: 1.35; color: #c8d0e0; font-weight: 500; margin-bottom: 34px; }
+  .tagline b { color: #fff; }
+  .chips { display: flex; flex-direction: column; gap: 14px; }
+  .chip {
+    display: flex; align-items: center; gap: 14px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.10);
+    border-radius: 14px; padding: 14px 18px; font-size: 20px; font-weight: 600;
+  }
+  .chip .ic { font-size: 23px; }
+
+  .right { flex: 1; display: flex; justify-content: center; align-items: center; position: relative; }
+  .window {
+    width: 540px; background: #fff; border-radius: 16px; overflow: hidden;
+    box-shadow: 0 40px 90px rgba(0,0,0,.55); color: #1c1c1e;
+  }
+  .bar { display: flex; align-items: center; gap: 8px; padding: 13px 16px; background: #eceef2; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .url { flex: 1; margin-left: 10px; background: #fff; border-radius: 8px; padding: 7px 14px; font-size: 14px; color: #6b7280; }
+  .page { padding: 24px 28px; }
+  .h { height: 24px; width: 70%; background: #2b2f36; border-radius: 6px; margin-bottom: 16px; }
+  .ln { height: 13px; background: #e5e7eb; border-radius: 5px; margin-bottom: 12px; }
+  .ln.s { width: 86%; } .ln.m { width: 96%; }
+  .clean {
+    margin: 14px 0; padding: 14px; border: 1px dashed #cfd6e4; border-radius: 10px;
+    color: #16a34a; font-size: 14px; font-weight: 700; text-align: center; background: #f0fdf4;
+  }
+  .popup {
+    position: absolute; right: 0; bottom: 34px; width: 250px; background: #16181d;
+    border-radius: 14px; box-shadow: 0 24px 60px rgba(0,0,0,.6); color: #e8eaed; overflow: hidden;
+    border: 1px solid rgba(255,255,255,.08);
+  }
+  .popup .top { display: flex; align-items: center; gap: 9px; padding: 12px 15px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .popup .mini { width: 18px; height: 18px; border-radius: 50%; background: #e03131; position: relative; flex: none; }
+  .popup .mini::after { content: ""; position: absolute; top: 50%; left: 3px; right: 3px; height: 3px; background: #fff; transform: translateY(-50%) rotate(-45deg); border-radius: 1px; }
+  .popup .top b { font-size: 15px; }
+  .popup .row { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; font-size: 13px; }
+  .popup .row + .row { border-top: 1px solid rgba(255,255,255,.06); }
+  .sw { width: 38px; height: 22px; border-radius: 11px; background: #e03131; position: relative; flex: none; }
+  .sw::after { content: ""; position: absolute; top: 2px; right: 2px; width: 18px; height: 18px; border-radius: 50%; background: #fff; }
+  .badge { position: absolute; right: 38px; top: 24px; background: #e03131; color: #fff; font-size: 13px; font-weight: 700; padding: 4px 9px; border-radius: 8px; }
+</style>
+</head>
+<body>
+  <div class="left">
+    <div class="brand">
+      <div class="logo"></div>
+      <div class="wordmark">Bloq</div>
+    </div>
+    <div class="tagline">Чистый, быстрый и приватный веб <b>без рекламы, трекеров и cookie-окон</b>.</div>
+    <div class="chips">
+      <div class="chip"><span class="ic">🛡️</span> Реклама и трекеры - до загрузки</div>
+      <div class="chip"><span class="ic">🧹</span> Баннеры и пустые блоки скрыты</div>
+      <div class="chip"><span class="ic">🍪</span> Cookie-окна: авто-«Отклонить все»</div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="window">
+      <div class="bar">
+        <div class="dot" style="background:#ff5f57"></div>
+        <div class="dot" style="background:#febc2e"></div>
+        <div class="dot" style="background:#28c840"></div>
+        <div class="url">example.com - страница без рекламы</div>
+      </div>
+      <div class="page">
+        <div class="h"></div>
+        <div class="ln m"></div><div class="ln s"></div>
+        <div class="clean">◻ Здесь была реклама - убрано Bloq</div>
+        <div class="ln m"></div><div class="ln s"></div>
+      </div>
+      <div class="badge">🚫 27</div>
+    </div>
+
+    <div class="popup">
+      <div class="top"><span class="mini"></span><b>Bloq</b></div>
+      <div class="row"><span>Блокировка включена</span><span class="sw"></span></div>
+      <div class="row"><span>Блокировать на example.com</span><span class="sw"></span></div>
+    </div>
+  </div>
+</body>
+</html>
