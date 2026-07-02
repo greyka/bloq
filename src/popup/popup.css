@@ -1,56 +1,211 @@
+/* Bloq - попап. Тёмная премиум-тема со светлым вариантом (prefers-color-scheme). */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-  font: 13px/1.4 system-ui, sans-serif;
-  margin: 0;
-  min-width: 270px;
-  color: #1c1c1e;
-  background: #ffffff;
+  width: 300px;
+  overflow-x: hidden;
+  background: #0e0f12;
+  font-family: system-ui, "Segoe UI", sans-serif;
+  color: #e8eaed;
+  -webkit-font-smoothing: antialiased;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  border-bottom: 1px solid #e2e2e2;
+.popup { width: 300px; background: #0e0f12; }
+
+/* Шапка */
+.header { padding: 20px 20px 16px; display: flex; align-items: center; gap: 11px; }
+
+.logo {
+  position: relative;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: #e03131;
+  box-shadow: 0 0 0 1px rgba(224, 49, 49, 0.4), 0 0 18px -2px rgba(224, 49, 49, 0.55);
+  flex-shrink: 0;
+}
+.logo::after {
+  content: "";
+  position: absolute; top: 50%; left: 50%;
+  width: 22px; height: 4px;
+  background: #fff; border-radius: 2px;
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-h1 {
-  font-size: 15px;
-  margin: 0;
+.wordmark { display: flex; flex-direction: column; line-height: 1.1; }
+.wordmark .name { font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: #fff; }
+.wordmark .sub { font-size: 11px; color: #6b7078; letter-spacing: 0.02em; }
+
+.status-pill {
+  margin-left: auto;
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(224, 49, 49, 0.1);
+  border: 1px solid rgba(224, 49, 49, 0.2);
+  border-radius: 20px;
+  padding: 4px 9px;
+}
+.status-pill .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #ff4d4d; box-shadow: 0 0 6px #ff4d4d;
+}
+.status-pill .label { font-size: 10px; font-weight: 500; color: #ff8080; letter-spacing: 0.02em; }
+
+/* Пауза (глобально выключено) */
+.is-off .status-pill { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.1); }
+.is-off .status-pill .dot { background: #6b7078; box-shadow: none; }
+.is-off .status-pill .label { color: #9aa0a8; }
+.is-off .row.primary .icon-box { background: rgba(255, 255, 255, 0.06); }
+.is-off .shield { background: #6b7078; }
+
+.divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07), transparent); }
+
+.body { padding: 18px 20px 8px; }
+
+/* Строки */
+.row { display: flex; align-items: center; gap: 13px; border-radius: 14px; padding: 15px 16px; }
+.row.primary {
+  background: linear-gradient(160deg, rgba(224, 49, 49, 0.08), rgba(224, 49, 49, 0.02));
+  border: 1px solid rgba(224, 49, 49, 0.16);
+}
+.row.site {
+  margin-top: 12px; padding: 14px 16px;
+  background: #16181d;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
-  cursor: pointer;
+.icon-box {
+  width: 38px; height: 38px; border-radius: 11px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  background: rgba(224, 49, 49, 0.14);
 }
 
-.row b {
-  word-break: break-all;
+/* Щит - чистый CSS */
+.shield {
+  position: relative; width: 19px; height: 22px;
+  background: #ff5a5a;
+  clip-path: polygon(50% 0%, 100% 18%, 100% 55%, 50% 100%, 0% 55%, 0% 18%);
+}
+.shield::after {
+  content: ""; position: absolute; top: 8px; left: 5px;
+  width: 4px; height: 8px;
+  border-right: 2px solid #16181d; border-bottom: 2px solid #16181d;
+  transform: rotate(40deg);
 }
 
-.hint {
-  margin: 4px 14px;
-  color: #8e8e93;
-  font-size: 12px;
+/* Фавиконка сайта */
+.fav {
+  width: 38px; height: 38px; border-radius: 11px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  color: #c4c8cf;
 }
+.fav img { width: 20px; height: 20px; border-radius: 5px; }
+.fav .globe { display: flex; }
+.fav .globe svg { width: 20px; height: 20px; stroke: #8b909a; fill: none; }
 
-button {
-  margin: 4px 14px 12px;
-  padding: 6px 10px;
-  cursor: pointer;
+.row-text { flex: 1; min-width: 0; }
+.row-text .title { font-size: 14px; font-weight: 600; color: #fff; letter-spacing: -0.01em; }
+.row-text .desc { font-size: 11.5px; color: #8b909a; margin-top: 2px; }
+.row-text .over { font-size: 11px; color: #6b7078; letter-spacing: 0.02em; }
+.row.site .title { margin-top: 1px; overflow-wrap: anywhere; }
+
+/* Тумблер: нативный чекбокс, стилизованный под switch */
+.switch { position: relative; display: inline-flex; flex-shrink: 0; }
+.switch input {
+  position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer;
 }
+.switch .track {
+  width: 46px; height: 26px; border-radius: 13px;
+  background: #3a3d44; transition: background 0.2s ease;
+  position: relative; pointer-events: none;
+}
+.switch .knob {
+  position: absolute; top: 3px; left: 3px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: #fff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+  transition: left 0.2s ease;
+}
+.switch input:checked + .track {
+  background: #e03131;
+  box-shadow: 0 0 0 1px rgba(224, 49, 49, 0.3), 0 0 10px -3px rgba(224, 49, 49, 0.55);
+}
+.switch input:checked + .track .knob { left: 23px; }
+.switch input:focus-visible + .track { outline: 2px solid #ff8080; outline-offset: 2px; }
+.switch input:disabled { cursor: default; }
+.switch input:disabled + .track { opacity: 0.4; }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #1c1c1e;
-    color: #f2f2f7;
+/* Метрики */
+.stats { margin-top: 14px; display: flex; gap: 8px; }
+.stat {
+  flex: 1; background: #16181d;
+  border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px;
+  padding: 12px 13px;
+}
+.stat .num { font-size: 20px; font-weight: 600; color: #fff; letter-spacing: -0.02em; line-height: 1; }
+.stat .cap { font-size: 10.5px; color: #6b7078; margin-top: 5px; }
+
+/* Плашка «обнови страницу» */
+.notice {
+  margin-top: 14px; padding: 11px 13px;
+  background: rgba(224, 49, 49, 0.09);
+  border: 1px solid rgba(224, 49, 49, 0.18);
+  border-radius: 12px;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 11.5px; color: #c9ccd2;
+}
+.notice span { flex: 1; }
+.notice button {
+  flex-shrink: 0; border: none; cursor: pointer;
+  background: #e03131; color: #fff;
+  font: inherit; font-weight: 600; font-size: 11.5px;
+  padding: 6px 12px; border-radius: 8px;
+}
+.notice button:hover { background: #c92a2a; }
+.notice button:focus-visible { outline: 2px solid #ff8080; outline-offset: 2px; }
+
+/* Футер */
+.footer {
+  margin-top: 14px; padding: 12px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.footer .note { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #6b7078; }
+.footer .lock { width: 11px; height: 13px; position: relative; flex-shrink: 0; }
+.footer .lock .shackle {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 7px; height: 7px;
+  border: 1.5px solid #6b7078; border-bottom: none; border-radius: 4px 4px 0 0;
+}
+.footer .lock .base {
+  position: absolute; bottom: 0; left: 0;
+  width: 11px; height: 8px; background: #6b7078; border-radius: 2px;
+}
+.footer .version { font-size: 11px; color: #565b63; letter-spacing: 0.02em; }
+
+/* Светлая тема */
+@media (prefers-color-scheme: light) {
+  body, .popup { background: #f4f5f7; color: #1a1c20; }
+  .wordmark .name { color: #16181d; }
+  .wordmark .sub, .row-text .over, .stat .cap, .footer .note { color: #7a808a; }
+  .divider { background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.08), transparent); }
+  .row.primary {
+    background: linear-gradient(160deg, rgba(224, 49, 49, 0.07), rgba(224, 49, 49, 0.02));
+    border-color: rgba(224, 49, 49, 0.2);
   }
-
-  header {
-    border-color: #3a3a3c;
+  .row.site, .stat {
+    background: #fff; border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
+  .fav { background: rgba(0, 0, 0, 0.04); color: #4a4f57; }
+  .fav .globe svg { stroke: #7a808a; }
+  .row-text .title, .stat .num { color: #16181d; }
+  .row-text .desc { color: #565b63; }
+  .shield::after { border-color: #fff; }
+  .switch .track { background: #cfd3da; }
+  .is-off .status-pill { background: rgba(0, 0, 0, 0.05); border-color: rgba(0, 0, 0, 0.1); }
+  .is-off .status-pill .label { color: #6b7078; }
+  .footer { border-top-color: rgba(0, 0, 0, 0.06); }
+  .footer .lock .shackle { border-color: #a0a5ac; }
+  .footer .lock .base { background: #a0a5ac; }
+  .footer .version { color: #a0a5ac; }
 }

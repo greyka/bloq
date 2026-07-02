@@ -6,23 +6,79 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <header>
-    <img src="../../icons/icon32.png" alt="" width="20" height="20">
-    <h1>Bloq</h1>
-  </header>
+  <div class="popup">
+    <header class="header">
+      <div class="logo"></div>
+      <div class="wordmark">
+        <span class="name">Bloq</span>
+        <span class="sub">Приватность и защита</span>
+      </div>
+      <div class="status-pill" id="status-pill">
+        <span class="dot"></span>
+        <span class="label" id="status-label">Активна</span>
+      </div>
+    </header>
 
-  <label class="row">
-    <span>Блокировка включена</span>
-    <input type="checkbox" id="enabled">
-  </label>
+    <div class="divider"></div>
 
-  <label class="row" id="site-row">
-    <span>Блокировать на <b id="site-host"></b></span>
-    <input type="checkbox" id="site-enabled">
-  </label>
+    <main class="body">
+      <div class="row primary">
+        <div class="icon-box"><span class="shield"></span></div>
+        <div class="row-text">
+          <div class="title">Блокировка включена</div>
+          <div class="desc" id="primary-desc">Защита активна на всех сайтах</div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="enabled" aria-label="Блокировка включена">
+          <span class="track"><span class="knob"></span></span>
+        </label>
+      </div>
 
-  <p class="hint" id="hint" hidden>Сетевые правила применятся после обновления страницы.</p>
-  <button id="reload" hidden>Обновить страницу</button>
+      <div class="row site" id="site-row">
+        <div class="fav">
+          <img id="fav-img" alt="" hidden>
+          <span class="globe" id="fav-globe" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.6">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"></path>
+            </svg>
+          </span>
+        </div>
+        <div class="row-text">
+          <div class="over">Текущий сайт</div>
+          <div class="title">Блокировать на <span id="site-host"></span></div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="site-enabled" aria-label="Блокировать на текущем сайте">
+          <span class="track"><span class="knob"></span></span>
+        </label>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="num" id="stat-blocklist">-</div>
+          <div class="cap">Доменов в блок-листе</div>
+        </div>
+        <div class="stat">
+          <div class="num" id="stat-allowlist">-</div>
+          <div class="cap">Ваших исключений</div>
+        </div>
+      </div>
+
+      <div class="notice" id="hint" hidden>
+        <span>Обнови страницу, чтобы применить сетевые правила.</span>
+        <button id="reload" type="button">Обновить</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="note">
+        <span class="lock"><span class="shackle"></span><span class="base"></span></span>
+        <span>Данные не покидают устройство</span>
+      </div>
+      <span class="version" id="version">v1.0.0</span>
+    </footer>
+  </div>
 
   <script type="module" src="popup.js"></script>
 </body>
