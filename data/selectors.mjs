@@ -12,8 +12,6 @@ export const cosmeticSelectors = [
   "#ad-banner",
   "#banner-ad",
   "#banner_ad",
-  ".ad",
-  ".ads",
   ".advert",
   ".advertisement",
   ".advertising",
@@ -30,7 +28,6 @@ export const cosmeticSelectors = [
   ".adfox",
   'div[id^="adfox_"]',
   'div[id^="yandex_rtb_"]',
-  ".adv",
   ".banner-ad",
   ".banner_ad",
   'div[id^="div-gpt-ad"]',
@@ -42,6 +39,25 @@ export const cosmeticSelectors = [
   ".trc_related_container",
   ".OUTBRAIN",
   ".ob-widget",
+];
+
+// Домены, где косметическую фильтрацию НЕ применяем: веб-почта и веб-приложения
+// с обфусцированными CSS-классами. Там высок риск ложных срабатываний (короткий
+// класс вроде «ad» совпадает со служебным), а сторонней рекламы почти нет.
+// Сетевые правила declarativeNetRequest при этом продолжают работать.
+export const cosmeticExcludedDomains = [
+  "mail.google.com",
+  "outlook.live.com",
+  "outlook.office.com",
+  "outlook.office365.com",
+  "mail.yandex.ru",
+  "e.mail.ru",
+  "mail.proton.me",
+  "web.telegram.org",
+  "web.whatsapp.com",
+  "docs.google.com",
+  "drive.google.com",
+  "calendar.google.com",
 ];
 
 // Cookie-попапы: контейнеры и оверлеи известных CMP + осторожные генерики.

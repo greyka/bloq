@@ -37,7 +37,11 @@
   }
 
   function applyState({ enabled, allowlist }) {
-    const shouldRun = enabled && !matching.isAllowlisted(location.hostname, allowlist);
+    const host = location.hostname;
+    const shouldRun =
+      enabled &&
+      !matching.isAllowlisted(host, allowlist) &&
+      !matching.isAllowlisted(host, data.cosmeticExcludedDomains);
     if (shouldRun && !active) enable();
     else if (!shouldRun && active) disable();
   }
